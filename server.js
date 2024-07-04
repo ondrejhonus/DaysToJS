@@ -26,6 +26,7 @@ io.on('connection', (socket) => {
     console.log("user joined room", room);
     socket.join(room);
   });
+  
 
   socket.on('chat message out', (data) => {
     socket.to(data.room).emit(`chat message in ${data.room}`, data.msg);
