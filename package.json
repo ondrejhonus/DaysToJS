@@ -12,6 +12,8 @@
   "author": "Ondrej Honus",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.20.2",
+    "ejs": "^3.1.10",
     "express": "^4.19.2",
     "socket.io": "^4.7.5"
   }

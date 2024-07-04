@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Days to an event</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.1/css/bulma.min.css">
+    <link rel="stylesheet" href="css/menu.css">
+
+</head>
+
+<body>
+    <h1 class="is-size-1">Countdown timer</h1>
+    <h3 class="is-size-3">Join or create a waiting room</h3>
+    <form action="javascript:;" id="dateForm" onsubmit="formSubmitted()">
+        <input class="input" type="datetime-local" name="dateInput" id="dateInput">
+        <button class="button" type="submit">Go!</button>
+    </form>
+
+</body>
+<script src="/socket.io/socket.io.js"></script>
+<script src="js/menu.js"></script>
+
+</html>
