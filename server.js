@@ -13,6 +13,8 @@ app.set("view engine", "ejs");
 const server = createServer(app);
 const io = new Server(server);
 
+let rooms = [];
+
 app.get('/', (req, res) => {
   res.render("menu");
 });
@@ -22,15 +24,16 @@ app.get('/countdown', (req, res) => {
   });
 
 io.on('connection', (socket) => {
-  socket.on("join room", (room) => {
+  socket.on("join room", room => {
     console.log("user joined room", room);
     socket.join(room);
+    rooms.push(room);
   });
-  
 
-  socket.on('chat message out', (data) => {
-    socket.to(data.room).emit(`chat message in ${data.room}`, data.msg);
-  });
+  socket.on('get_rooms', () => {
+    socket.emit('rooms_list', rooms.sort((a, b) => a.date > b.date))
+    console.log(rooms);
+});
 
   socket.on("leave room", (room) => {
     console.log("user left room", room);

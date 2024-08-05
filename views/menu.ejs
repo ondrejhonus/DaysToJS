@@ -14,12 +14,13 @@
     <h1 class="is-size-1">Countdown timer</h1>
     <h3 class="is-size-3">Join or create a waiting room</h3>
     <form action="javascript:;" id="dateForm" onsubmit="formSubmitted()">
+        <input class="input" type="text" name="nameInput" id="nameInput" placeholder="Enter event name">
         <input class="input" type="datetime-local" name="dateInput" id="dateInput">
         <button class="button" type="submit">Go!</button>
+        <ul id="roomsList"></ul>
     </form>
 
 </body>
 <script src="/socket.io/socket.io.js"></script>
 <script src="js/menu.js"></script>
-
 </html>
