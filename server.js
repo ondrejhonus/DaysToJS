@@ -25,7 +25,7 @@ app.get('/countdown', (req, res) => {
 
 io.on('connection', (socket) => {
   socket.on("join room", room => {
-    console.log("user joined room", room);
+    console.log("user created room", room);
     socket.join(room);
     rooms.push(room);
   });

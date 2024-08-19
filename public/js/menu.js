@@ -20,9 +20,10 @@ getRooms();
 
 socket.on('rooms_list', (rooms) => {
   let roomsList = document.getElementById('roomsList');
+  let roomListText = document.getElementById("roomListText");
   roomsList.innerHTML = '';
   rooms.forEach(room => {
-
+    roomListText.classList.remove("is-hidden");
     let date = new Date(room.date);
     let year = date.getFullYear();
     let mon = date.getMonth() + 1;
